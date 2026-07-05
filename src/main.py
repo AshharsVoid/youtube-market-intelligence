@@ -1,8 +1,28 @@
-from config import YOUTUBE_API_KEY
+from api.youtube_client import YouTubeClient
 
-print("=" * 50)
-print("YouTube Market Intelligence")
-print("=" * 50)
 
-print("API Key Loaded Successfully!")
-print(f"API Key starts with: {YOUTUBE_API_KEY[:10]}...")
+def main():
+
+    print("=" * 50)
+    print("YouTube Market Intelligence")
+    print("=" * 50)
+
+    market = "Azadpur Mandi"
+
+    print(f"\nSearching for: {market}\n")
+
+    client = YouTubeClient()
+
+    channels = client.search_channels(market)
+
+    print(f"Found {len(channels)} channels\n")
+
+    for index, channel in enumerate(channels, start=1):
+
+        print(f"{index}. {channel['channel_name']}")
+        print(f"   {channel['url']}")
+        print()
+
+
+if __name__ == "__main__":
+    main()
