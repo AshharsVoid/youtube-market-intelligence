@@ -19,3 +19,5 @@ data/raw/
 
 # macOS Files
 .DS_Store
+
+credentials/
