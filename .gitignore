@@ -20,4 +20,8 @@ data/raw/
 # macOS Files
 .DS_Store
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 credentials/
